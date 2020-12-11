@@ -36,7 +36,7 @@ namespace Blazored.FluentValidation
             return editContext;
         }
 
-        private static async void ValidateModel(EditContext editContext,
+        private static void ValidateModel(EditContext editContext,
                                                 ValidationMessageStore messages,
                                                 IServiceProvider serviceProvider,
                                                 bool disableAssemblyScanning,
@@ -49,7 +49,7 @@ namespace Blazored.FluentValidation
             {
                 var context = ValidationContext<object>.CreateWithOptions(editContext.Model, fluentValidationValidator.options ?? (opt => opt.IncludeAllRuleSets()));
 
-                var validationResults = await validator.ValidateAsync(context);
+                var validationResults = validator.Validate(context);
 
                 messages.Clear();
                 foreach (var validationResult in validationResults.Errors)
@@ -62,7 +62,7 @@ namespace Blazored.FluentValidation
             }
         }
 
-        private static async void ValidateField(EditContext editContext,
+        private static void ValidateField(EditContext editContext,
                                                 ValidationMessageStore messages,
                                                 FieldIdentifier fieldIdentifier,
                                                 IServiceProvider serviceProvider,
@@ -76,7 +76,7 @@ namespace Blazored.FluentValidation
 
             if (validator is object)
             {
-                var validationResults = await validator.ValidateAsync(context);
+                var validationResults = validator.Validate(context);
 
                 messages.Clear(fieldIdentifier);
                 messages.Add(fieldIdentifier, validationResults.Errors.Select(error => error.ErrorMessage));

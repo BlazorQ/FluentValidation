@@ -1,25 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
-		<RazorLangVersion>3.0</RazorLangVersion>
+		<TargetFramework>net5.0</TargetFramework>
 
-		<Authors>Chris Sainty</Authors>
+		<Authors>Chris Sainty, Giovanni Quarella</Authors>
 		<Company></Company>
 		<Copyright>Copyright 2020 (c) Chris Sainty. All rights reserved.</Copyright>
 
-		<Description>A library for using FluentValidation with Blazor</Description>
+		<Description>A library for using FluentValidation with Blazor with RuleSets support</Description>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
 		<!-- NuGet settings -->
-		<PackageId>Blazored.FluentValidation</PackageId>
-		<PackageTags>Blazor;FluentValidation;Fluent Validation;Blazored;Components;ASP.NET Core;CSharp;Web</PackageTags>
+		<PackageId>BlazorQ.FluentValidation.RuleSetSync</PackageId>
+		<PackageTags>Blazor;FluentValidation;Fluent Validation;Components;ASP.NET Core;CSharp;Web</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/Blazored/FluentValidation</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/GioviQ/FluentValidation/tree/sync</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/Blazored/FluentValidation</RepositoryUrl>
+		<RepositoryUrl>https://github.com/GioviQ/FluentValidation/tree/sync</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
 		<!-- SourceLink settings -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -27,9 +27,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="9.2.2" />
-		<PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.9" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.9" />
+		<PackageReference Include="FluentValidation" Version="9.5.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
